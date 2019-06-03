@@ -39,9 +39,9 @@ this wil allow you you add as many sorting rules as you want to a query.
 ```php
 use MongoDB\BSON\Serializable;
 use MongoDB\Model\BSONDocument;
-use Leaf\Model\MongoModel
+use Edd\MongoDbHelpers\MongoModelInterface
 
-class User implements Serializable, MongoModel
+class User implements Serializable, MongoModelInterface
 {
     public $userGuid;
     public $email;

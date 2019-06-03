@@ -9,7 +9,7 @@
  */
 declare(strict_types=1);
 
-namespace Edd\MongoDbHelpers\Model;
+namespace Edd\MongoDbHelpers;
 
 use MongoDB\Model\BSONDocument;
 
