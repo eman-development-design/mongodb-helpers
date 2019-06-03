@@ -21,11 +21,13 @@ use MongoDB\Collection;
 abstract class MongoRepository
 {
     /**
-     * @var Client
+     * MongoDB Client Instance
+     * @var \MongoDB\Client
      */
     protected $mongo;
 
     /**
+     * MongoDB Collection Instance
      * @var \MongoDB\Collection
      */
     private $collection;
