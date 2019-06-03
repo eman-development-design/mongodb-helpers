@@ -21,6 +21,7 @@ abstract class DataSorting
     public const DESC = -1;
 
     /**
+     * Sort list builder for our sort query
      * @var array
      */
     private static $sortList = [];
