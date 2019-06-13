@@ -43,14 +43,20 @@ abstract class MongoRepository
 
     /**
      * Get instance of MongoDB\Collection
-     * @throws \MongoDB\Exception\InvalidArgumentException
+     * @return \MongoDB\Collection
      */
-    abstract protected function GetCollection() : Collection;
+    protected function GetCollection() : Collection
+    {
+        return $this->collection;
+    }
 
     /**
      * Set an instance of MongoDB\Collection
      * @param string $dbName
      * @param string $collection
      */
-    abstract protected function SetCollection(string $dbName, string $collection) : void;
+    protected function SetCollection(string $dbName, string $collection) : void
+    {
+        $this->collection = $this->mongo->selectCollection($dbName, $collection);
+    }
 }
