@@ -1,6 +1,7 @@
 {
   "name": "eman-development-design/mongodb-helpers",
   "description": "Helper Objects to make writing MongoDB apps easier.",
+  "keywords": ["helper", "mongodb", "mongo", "sorting", "model", "repository"],
   "homepage": "http://emandevelopmentdesign.com",
   "type": "library",
   "license": "MIT",
@@ -11,24 +12,15 @@
       "role": "developer"
     }
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "require": {
     "php": "^7.2.0",
     "ext-mongodb": "*",
-    "mongodb/mongodb": "^1.4",
-    "sensiolabs/security-checker": "^5.0"
+    "mongodb/mongodb": "^1.4"
   },
   "autoload": {
     "psr-4": {
       "Edd\\MongoDbHelpers\\": "src/"
     }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "php vendor/bin/security-checker security:check composer.lock"
-    ],
-    "post-update-cmd": [
-      "php vendor/bin/security-checker security:check composer.lock"
-    ]
   }
 }
