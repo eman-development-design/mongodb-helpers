@@ -5,7 +5,7 @@ Helper Objects to make writing MongoDB apps easier.
 
 ### Sorting Helper
 
-You can easily add paging by extending ```DataSorting```
+You can easily add sorting by extending ```DataSorting```
 
 ```php
 class UserSorting extends DataSorting
