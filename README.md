@@ -3,7 +3,7 @@ Helper Objects to make writing MongoDB apps easier.
 
 ## Helpers
 
-### Pagination Helper
+### Sorting Helper
 
 You can easily add paging by extending ```DataSorting```
 
