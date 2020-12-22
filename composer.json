@@ -12,11 +12,11 @@
       "role": "developer"
     }
   ],
-  "version": "1.0.4",
+  "version": "1.0.5",
   "require": {
-    "php": "^7.2.0",
-    "ext-mongodb": "*",
-    "mongodb/mongodb": "^1.4"
+    "php": ">=7.2.0",
+    "ext-mongodb": "^1.8.1",
+    "mongodb/mongodb": "^1.8"
   },
   "autoload": {
     "psr-4": {
