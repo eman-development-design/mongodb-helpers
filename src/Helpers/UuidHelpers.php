@@ -4,8 +4,18 @@ namespace Edd\MongoDbHelpers\Helpers;
 
 use MongoDB\BSON\Binary;
 
+/**
+ * Credit for this goes to the CSharp MongoDB driver development team.
+ *
+ * @link https://github.com/mongodb/mongo-csharp-driver/blob/master/uuidhelpers.js
+ */
 class UuidHelpers
 {
+    public static function toUuid(string $data): string
+    {
+        return 'TODO';
+    }
+
     /**
      * Converts BSONBinary data to the C# GUID format.
      *
@@ -27,5 +37,20 @@ class UuidHelpers
         $guidStr = $a . $b . $c . $d;
 
         return substr($guidStr, 0, 8) . '-' . substr($guidStr, 8, 4) . '-' . substr($guidStr, 12, 4) . '-' . substr($guidStr, 16, 4) . '-' . substr($guidStr, 20, 12);
+    }
+
+    public static function toJavaUuid(string $data): string
+    {
+        return 'TODO';
+    }
+
+    public static function toPythonUuid(string $data): string
+    {
+        return 'TODO';
+    }
+
+    public static function toHexUuid(string $data): string
+    {
+        return 'TODO';
     }
 }
