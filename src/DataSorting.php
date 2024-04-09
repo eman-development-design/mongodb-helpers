@@ -1,18 +1,7 @@
 <?php
-/**
- * This file is part of the mongodb-helpers package.
- *
- * (c) 2024 Eman Development & Design
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+
 namespace Edd\MongoDbHelpers;
 
-/**
- * Class DataSorting
- * @package Edd\MongoDbHelpers
- */
 abstract class DataSorting
 {
     public const ASC = 1;
