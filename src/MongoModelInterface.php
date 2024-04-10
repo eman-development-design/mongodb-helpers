@@ -4,6 +4,9 @@ namespace Edd\MongoDbHelpers;
 
 use MongoDB\Model\BSONDocument;
 
+/**
+ * @deprecated It's advised to use MongoModel instead, which takes care of a lot of boilerplate work.
+ */
 interface MongoModelInterface
 {
     /**
