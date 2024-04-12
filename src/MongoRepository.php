@@ -1,36 +1,23 @@
 <?php
-/**
- * This file is part of the mongodb-helpers package.
- *
- * (c) 2019 Eman Development & Design
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-declare(strict_types=1);
 
 namespace Edd\MongoDbHelpers;
 
 use MongoDB\Client;
 use MongoDB\Collection;
 
-/**
- * Class MongoRepository
- * @package Edd\MongoDbHelpers
- */
 abstract class MongoRepository
 {
     /**
      * MongoDB Client Instance
      * @var \MongoDB\Client
      */
-    protected $mongo;
+    protected Client $mongo;
 
     /**
      * MongoDB Collection Instance
      * @var \MongoDB\Collection
      */
-    private $collection;
+    private Collection $collection;
 
     /**
      * MongoRepository constructor.
@@ -55,7 +42,7 @@ abstract class MongoRepository
      * @param string $dbName
      * @param string $collection
      */
-    protected function SetCollection(string $dbName, string $collection) : void
+    protected function SetCollection(string $dbName, string $collection): void
     {
         $this->collection = $this->mongo->selectCollection($dbName, $collection);
     }

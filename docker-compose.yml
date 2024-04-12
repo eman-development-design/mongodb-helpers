@@ -1,0 +1,14 @@
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:7.0-jammy
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: demo
+      MONGO_INITDB_ROOT_PASSWORD: setup13
+      MONGO_INITDB_DATABASE: demo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data_container:/data/db
+volumes:
+  mongodb_data_container: {}

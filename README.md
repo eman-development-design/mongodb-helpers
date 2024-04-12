@@ -1,4 +1,5 @@
 # mongodb-helpers
+
 Helper Objects to make writing MongoDB apps easier.
 
 ## Helpers
@@ -47,7 +48,7 @@ class User implements Serializable, MongoModelInterface
     public $email;
     public $firstName;
     public $lastName;
-    
+
     public function bsonSerialize() : array
     {
         return [

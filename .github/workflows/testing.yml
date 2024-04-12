@@ -1,0 +1,19 @@
+name: Testing
+on:
+  pull_request
+jobs:
+  Testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codebase ⬇️
+        uses: actions/checkout@v4
+      - name: Setup PHP 🔧
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+      - name: Install Dependencies 📦️
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+      - name: Run tests 🧪
+        run: composer run-script test:unit

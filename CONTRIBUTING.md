@@ -2,8 +2,7 @@
 
 ## Pull Requests
 
-MongoDB Helpers follows [git flow](https://danielkummer.github.io/git-flow-cheatsheet/) rules when making branches, 
-never ever make a branh off master, always build it off of develop.
+When a prll request is made, it must pass all quality checks.
 
 ## Coding Conventions
 
@@ -18,7 +17,6 @@ always use a bracket, skipping them will get denied in pull request, the bracket
 This is what I'll be looking for:
 
 ```php
-if (condition)
-{
+if (condition) {
 }
 ```
