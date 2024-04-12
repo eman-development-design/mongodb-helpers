@@ -14,16 +14,27 @@ use ReflectionClass;
  */
 abstract class MongoModel implements Persistable
 {
-    private string $databaseName;
+    protected \MongoDB\BSON\ObjectId $id;
 
     protected Collection $collection;
 
+    private string $databaseName;
+
     private string $collectionName;
 
-    protected \MongoDB\BSON\ObjectId $id;
+    /**
+     * @var ReflectionClass<\Edd\MongoDbHelpers\MongoModel>
+     */
+    private ReflectionClass $reflector;
+
+    /**
+     * @var array<mixed>
+     */
+    private array $fields = [];
 
     public function __construct(private readonly ConnectionManager $connectionManager)
     {
+        $this->reflector = new ReflectionClass(get_class($this));
         $this->getAttributeValues();
         $this->setCollection();
     }
@@ -34,8 +45,7 @@ abstract class MongoModel implements Persistable
      * @return array<mixed>
      */
     public function bsonSerialize(): array {
-        // TODO
-        return [];
+        return $this->fields;
     }
 
     /**
@@ -78,6 +88,11 @@ abstract class MongoModel implements Persistable
         $this->collection = $this->connectionManager->mongo->selectCollection($this->databaseName, $this->collectionName);
     }
 
+    private function getPropertyAttributes(): void
+    {
+
+    }
+
     /**
      * Process our attributes to help aid model.
      *
@@ -85,7 +100,7 @@ abstract class MongoModel implements Persistable
      */
     private function getAttributeValues(): void
     {
-        foreach ((new ReflectionClass(get_class($this)))->getAttributes() as $attribute) {
+        foreach ($this->reflector->getAttributes() as $attribute) {
             if ($attribute->getName() !== Document::class) {
                 continue;
             }
