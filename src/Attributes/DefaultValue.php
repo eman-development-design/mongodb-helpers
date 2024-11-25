@@ -3,14 +3,15 @@
 namespace Edd\MongoDbHelpers\Attributes;
 
 use Attribute;
-use Edd\MongoDbHelpers\Constants\FieldTypes;
 
+/**
+ * Specifies the default value for a field or property.
+ */
 #[Attribute(Attribute::TARGET_PROPERTY)]
-class Field
+class DefaultValue
 {
     public function __construct(
-        public ?string $name = null,
-        public FieldTypes $type = FieldTypes::STRING
+        public mixed $value
     ) {
     }
 }

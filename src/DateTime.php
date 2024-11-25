@@ -10,9 +10,4 @@ class DateTime
     {
         return $dateTime->toDateTime();
     }
-
-//    public static function asDateTime(UTCDateTime $dateTime): UTCDateTime
-//    {
-//        return $dateTime->toDateTime();
-//    }
 }

@@ -2,15 +2,16 @@
 
 namespace Edd\MongoDbHelpers\Constants;
 
-enum FieldTypes: string
+enum FieldTypes
 {
-    case STRING = 'string';
-    case INT = 'int';
-    case FLOAT = 'float';
-    case DOUBLE = 'double';
-    case DATE = 'date';
-    case BOOLEAN = 'boolean';
-    case ARRAY = 'array';
-    case OBJECT = 'object';
-    case OBJECT_ID = 'object_id';
+    case STRING;
+    case INT;
+    case FLOAT;
+    case DOUBLE;
+    case DATE;
+    case DATETIME;
+    case BOOLEAN;
+    case ARRAY;
+    case OBJECT;
+    case OBJECT_ID;
 }

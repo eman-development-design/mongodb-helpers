@@ -2,10 +2,13 @@
 
 namespace Edd\MongoDbHelpers;
 
+use Edd\MongoDbHelpers\Attributes\BinaryField;
 use Edd\MongoDbHelpers\Attributes\Document;
+use Edd\MongoDbHelpers\Attributes\Field;
 use MongoDB\BSON\Persistable;
 use MongoDB\Collection;
 use ReflectionClass;
+use WeakMap;
 
 /**
  * An ODM-like Model.
@@ -32,8 +35,11 @@ abstract class MongoModel implements Persistable
      */
     private array $fields = [];
 
+    private WeakMap $fieldMap;
+
     public function __construct(private readonly ConnectionManager $connectionManager)
     {
+        $this->fieldMap = new WeakMap();
         $this->reflector = new ReflectionClass(get_class($this));
         $this->getAttributeValues();
         $this->setCollection();
@@ -90,7 +96,25 @@ abstract class MongoModel implements Persistable
 
     private function getPropertyAttributes(): void
     {
+        foreach ($this->reflector->getProperties() as $property) {
+            foreach ($property->getAttributes() as $attribute) {
+                $attrVals = $attribute->getArguments();
 
+                if ($attribute->getName() !== Field::class) {
+                    $fieldName = $attrVals[1] ?? $property->getName();
+
+                    $this->fieldMap[$fieldName] = [
+                        'fieldType' => $attrVals[0],
+                        'fieldValue' => $property->getValue(),
+                    ];
+                }
+
+                if ($attribute->getName() !== BinaryField::class) {
+                    continue;
+                }
+            }
+            //break;
+        }
     }
 
     /**
