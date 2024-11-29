@@ -5,13 +5,13 @@ namespace Edd\MongoDbHelpers\Attributes;
 use Attribute;
 
 /**
- * Specifies the default value for a field.
+ * Specifies the order of a field.
  */
 #[Attribute(Attribute::TARGET_PROPERTY)]
-class DefaultValue
+class FieldOrder
 {
     public function __construct(
-        public mixed $value
+        public int $order
     ) {
     }
 }

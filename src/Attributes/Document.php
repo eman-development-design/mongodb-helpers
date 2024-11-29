@@ -4,6 +4,9 @@ namespace Edd\MongoDbHelpers\Attributes;
 
 use Attribute;
 
+/**
+ * Specifies class is a document model.
+ */
 #[Attribute(Attribute::TARGET_CLASS)]
 class Document
 {
