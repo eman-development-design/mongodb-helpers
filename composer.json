@@ -2,7 +2,7 @@
   "name": "eman-development-design/mongodb-helpers",
   "description": "Helper Objects to make writing MongoDB apps easier.",
   "keywords": ["helper", "mongodb", "mongo", "sorting", "model", "repository"],
-  "homepage": "https://emandevelopmentdesign.com",
+  "homepage": "https://edlomonaco.dev",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -12,18 +12,17 @@
       "role": "developer"
     }
   ],
-  "version": "1.0.5",
+  "version": "2.0.0",
   "require": {
-    "php": ">=8.2",
+    "php": "^8.2",
     "ext-json": "*",
-    "ext-mongodb": "^1.17",
-    "mongodb/mongodb": "^1.17"
+    "ext-mongodb": "^1.20",
+    "mongodb/mongodb": "^1.20.0"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^v3.53",
-    "phpstan/phpstan": "^1.10",
-    "pestphp/pest": "^2.34",
-    "pestphp/pest-plugin-type-coverage": "^2.8"
+    "friendsofphp/php-cs-fixer": "^v3.65.0",
+    "phpstan/phpstan": "^2.0.2",
+    "pestphp/pest": "^v3.5.1"
   },
   "autoload": {
     "psr-4": {
